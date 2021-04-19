@@ -17,7 +17,7 @@ RUN apk update \
 RUN pip install -r ./${projectName}/requirements.txt && \
     pip install -r ./${projectName}/requirements-vendor.txt
 
-COPY ./docker/aws/credentials /root/.aws/credentials
+# COPY ./docker/aws/credentials /root/.aws/credentials
 
 EXPOSE 8000
 

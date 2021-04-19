@@ -2,7 +2,7 @@ import os
 from time import sleep
 
 from chalicelib.logging import get_logger
-from sqlalchemy import create_engine
+# from sqlalchemy import create_engine
 
 logger = get_logger()
 
@@ -22,11 +22,12 @@ def get_connection(connect=True, retry=False):
             'db': os.environ['DB']
         }
         try:
-            connection = create_engine('mysql://%s:%s@%s/%s'.format(
-                params['user'], params['password'], params['host'],params['db']
-            ))
-            if connect:
-                connection.begin()
+            connection = None
+            # connection = create_engine('mysql://%s:%s@%s/%s'.format(
+            #     params['user'], params['password'], params['host'],params['db']
+            # ))
+            # if connect:
+            #     connection.begin()
 
             _CONNECTION = connection
             _RETRY_COUNT = 0

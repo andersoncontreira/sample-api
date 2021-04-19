@@ -19,7 +19,7 @@ class ConnectionHelper:
     @staticmethod
     def get_dynamodb_local_connection():
         connection = boto3.resource('dynamodb',
-                                    endpoint_url='http://localhost:9000',
+                                    endpoint_url='http://0.0.0.0:9000',
                                     region_name="sa-east-1"
                                     )
         # print(list(connection.tables.all()))
